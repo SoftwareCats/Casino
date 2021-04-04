@@ -6,7 +6,7 @@ name: Maven Deploy
 on:
   release:
     # published, unpublished, created, edited, deleted, or prereleased
-    types: [published, prereleased]
+    types: [published, prereleased, edited]
 
 jobs:
   build:
