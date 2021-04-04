@@ -1,4 +1,4 @@
-package github.softwarecats.casino;
+package io.github.softwarecats.casino;
 
 import org.junit.Test;
 

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Basic Configuration -->
-    <groupId>github.softwarecats</groupId>
+    <groupId>io.github.softwarecats</groupId>
     <artifactId>casino</artifactId>
     <version>0.1.1</version>
 
