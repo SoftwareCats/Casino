@@ -1,8 +1,8 @@
-package io.github.softwarecats;
-
-import static org.junit.Assert.assertTrue;
+package io.github.softwarecats.casino;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
