@@ -24,3 +24,12 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+    - name: Stage Maven artifacts
+      run: mkdir staging && cp target/*.jar staging
+
+    - name: Upload Maven artifacts
+      uses: actions/upload-artifact@v2
+      with:
+          name: Package
+          path: staging
