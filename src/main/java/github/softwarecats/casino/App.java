@@ -1,4 +1,4 @@
-package io.github.softwarecats.casino;
+package github.softwarecats.casino;
 
 /**
  * Hello world!
