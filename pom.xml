@@ -104,7 +104,7 @@
 
     <!-- Project Information -->
     <name>Casino</name>
-    <description>Casino game simulation and analysis library.</description>
+    <description>Casino game simulation and analysis library</description>
     <url>https://github.com/SoftwareCats/Casino</url>
     <inceptionYear>2021</inceptionYear>
 
@@ -136,8 +136,6 @@
             <timezone>Australia/Sydney</timezone>
         </developer>
     </developers>
-
-    <contributors/>
 
     <!-- Environment Settings -->
     <issueManagement>
