@@ -18,6 +18,8 @@ package io.github.softwarecats.casino.event;
 
 import org.apache.commons.lang3.math.Fraction;
 
+import java.util.Objects;
+
 /**
  * Outcome contains a single outcome on which a bet can be placed.
  */
@@ -27,7 +29,6 @@ public class Outcome {
      * Holds the name of the Outcome. Examples include "1", "Red", "Pass Line".
      */
     protected final String NAME;
-
     /**
      * Holds the fractional odds for this Outcome. This is the multiplier for the win amount.
      */
@@ -65,6 +66,19 @@ public class Outcome {
     public Outcome(String name, Fraction odds) {
         this.NAME = name;
         this.ODDS = odds;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Outcome outcome = (Outcome) o;
+        return Objects.equals(NAME, outcome.NAME) && Objects.equals(ODDS, outcome.ODDS);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(NAME, ODDS);
     }
 
     /**
