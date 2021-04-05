@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\src\main\java\io\github\softwarecats\casino\event\Outcome.java">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\io\github\softwarecats\casino\event\RandomEvent.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\src\test\java\io\github\softwarecats\casino\AppTest.java">
           <value>
             <Attribute>
