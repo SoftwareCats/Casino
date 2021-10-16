@@ -26,7 +26,7 @@ import java.util.Objects;
 public class Outcome {
 
     /**
-     * Holds the name of the Outcome. Examples include "1", "Red", "Pass Line".
+     * Holds the name of the Outcome. Examples include “1", “Red”, “Pass Line”.
      */
     protected final String NAME;
     /**
