@@ -101,16 +101,30 @@ public class Outcome {
         return ODDS.multiplyBy(Fraction.getFraction(amount));
     }
 
+    /**
+     * Returns the product this {@link Outcome}'s odds numerator by the given amount, divided by the odds' denominator.
+     *
+     * @param amount the amount
+     * @param event  the event that determines the actual odds to use
+     * @return the fraction
+     */
     public Fraction winAmount(Fraction amount, RandomEvent event) {
         return winAmount(amount);
     }
 
+    /**
+     * Returns the product this {@link Outcome}'s odds numerator by the given amount, divided by the odds' denominator.
+     *
+     * @param amount the amount
+     * @param event  the event that determines the actual odds to use
+     * @return the fraction
+     */
     public Fraction winAmount(int amount, RandomEvent event) {
         return winAmount(amount);
     }
 
     /**
-     * An easy-to-read String output method is also very handy. This should return a String representation of the name
+     * An easy-to-read String output method is also handy. This should return a String representation of the name
      * and the odds. A form that looks like 1-2 Split (17:1) is the goal.
      *
      * @return string representation of the {@link Outcome}
