@@ -16,6 +16,7 @@
 
 package io.github.softwarecats.casino.event;
 
+import lombok.Getter;
 import org.apache.commons.lang3.math.Fraction;
 
 import java.util.Objects;
@@ -28,11 +29,12 @@ public class Outcome {
     /**
      * Holds the name of the Outcome. Examples include “1", “Red”, “Pass Line”.
      */
-    protected final String NAME;
+    protected final String name;
+
     /**
      * Holds the fractional odds for this Outcome. This is the multiplier for the win amount.
      */
-    protected final Fraction ODDS;
+    @Getter protected final Fraction odds;
 
     /**
      * Sets the name and odds from the parameters.
@@ -64,8 +66,8 @@ public class Outcome {
      * @param odds the payout odds as a fraction
      */
     public Outcome(String name, Fraction odds) {
-        this.NAME = name;
-        this.ODDS = odds;
+        this.name = name;
+        this.odds = odds;
     }
 
     @Override
@@ -73,12 +75,12 @@ public class Outcome {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Outcome outcome = (Outcome) o;
-        return Objects.equals(NAME, outcome.NAME) && Objects.equals(ODDS, outcome.ODDS);
+        return Objects.equals(name, outcome.name) && Objects.equals(odds, outcome.odds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(NAME, ODDS);
+        return Objects.hash(name, odds);
     }
 
     /**
@@ -88,7 +90,7 @@ public class Outcome {
      * @return the amount won
      */
     public Fraction winAmount(Fraction amount) {
-        return ODDS.multiplyBy(amount);
+        return odds.multiplyBy(amount);
     }
 
     /**
@@ -98,7 +100,7 @@ public class Outcome {
      * @return the amount won
      */
     public Fraction winAmount(int amount) {
-        return ODDS.multiplyBy(Fraction.getFraction(amount));
+        return odds.multiplyBy(Fraction.getFraction(amount));
     }
 
     /**
@@ -131,6 +133,6 @@ public class Outcome {
      */
     @Override
     public String toString() {
-        return String.format("%s (%d:%d)", NAME, ODDS.getNumerator(), ODDS.getDenominator());
+        return String.format("%s (%d:%d)", name, odds.getNumerator(), odds.getDenominator());
     }
 }

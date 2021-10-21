@@ -19,6 +19,8 @@ package io.github.softwarecats.casino.bet;
 
 import io.github.softwarecats.casino.event.Outcome;
 import io.github.softwarecats.casino.player.Player;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Objects;
 
@@ -30,17 +32,17 @@ public class Bet {
     /**
      * The amount of the bet.
      */
-    public int amountBet;
+    @Getter protected int amountBet;
 
     /**
      * The Outcome on which the bet is placed.
      */
-    public Outcome outcome;
+    @Getter @Setter protected Outcome outcome;
 
     /**
      * The player who created the bet.
      */
-    public Player parent;
+    @Getter protected Player parent;
 
     public Bet(int amountBet, Outcome outcome) {
         this.amountBet = amountBet;
@@ -61,8 +63,8 @@ public class Bet {
     }
 
     /**
-     * Uses the Outcome‘s winAmount to compute the amount won, given the amount of this bet. Note that the
-     * amount bet must also be added in. A 1:1 outcome (e.g. a bet on Red) pays the amount bet plus the amount won.
+     * Uses the Outcome’s winAmount to compute the amount won, given the amount of this bet. Note that the
+     * amount bet must also be added in. A 1:1 outcome (e.g., a bet on Red) pays the amount bet plus the amount won.
      *
      * @return amount won
      */
@@ -80,10 +82,19 @@ public class Bet {
     }
 
     /**
-     * Returns a string representation of this bet. Note that this method will delegate the much of the work to the
-     * toString() method of the Outcome.
+     * Computes the price for this bet. For most bets, the price is the amount. Subclasses can override this to handle
+     * buy and lay bets where the price includes a 5% commission on the potential winnings.
      *
-     * @return string representation of this bet with the form "amount on outcome"
+     * @return the price to place the bet
+     */
+    public int price() {
+        return amountBet;
+    }
+
+    /**
+     * Returns a string representation of this bet. Note that this method will delegate the work to {@link Outcome#toString()}.
+     *
+     * @return string representation of this bet with the form “amount on outcome"
      */
     @Override
     public String toString() {
